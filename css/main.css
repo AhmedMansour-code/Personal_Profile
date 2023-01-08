@@ -428,6 +428,12 @@ li.other-links .dropmenu .dropmenu-nav li a {
     margin: 0 0;
     letter-spacing: -1.5px;
 }
+.landing .text h1 span {
+    background: linear-gradient(to left ,var(--main-color), rgb(28,130,150) );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .landing .text p {
     font-size: 23px;
     line-height: 1.5;
