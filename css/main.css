@@ -180,6 +180,23 @@ img.dots-bottom-left {
     left: 0;
     opacity: 0.3;
 }
+/* ----------------------------------------------- */
+a.scroll-up {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    background-color: #ddd;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: var(--main-color);
+    z-index: 100;
+    animation: scroll-up 0.5s infinite;
+}
+@keyframes scroll-up {
+    to {
+        bottom: 25px;
+    }
+}
 /* End Compounents */
 
 /* Start Variables */
@@ -231,7 +248,7 @@ header .container .nav ul {
 
 header .container .nav ul li:hover > a.main-link {
     color: var(--main-color);
-    background-color: #eee;
+    background-color: #f5f5f5;
 }
 header .container .nav ul li a.main-link {
     display: flex;
@@ -299,7 +316,6 @@ li.other-links .dropmenu {
         padding: 10px;
     }
 }
-
 li.other-links .dropmenu .image {
     width: fit-content;
     text-align: center;
@@ -314,15 +330,12 @@ li.other-links .dropmenu .image {
         width: 350px;
     }  
 }
-
 li.other-links .dropmenu .dropmenu-nav {
     flex: 1;
 }
-
 li.other-links .dropmenu .dropmenu-nav ul {
     display: block;
 }
-
 li.other-links .dropmenu .dropmenu-nav li {
     padding: 15px 10px;
     border-bottom: 1px solid #ddd;
@@ -338,7 +351,7 @@ li.other-links .dropmenu .dropmenu-nav li:before {
     left: 0;
     height: 100%;
     width: 0;
-    background-color: #eee;
+    background-color: #f5f5f5;
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
     -o-transition: var(--main-transition);
@@ -352,7 +365,6 @@ li.other-links .dropmenu .dropmenu-nav li:hover:before {
         border-bottom: 1px solid #ddd;
     }
 }
-
 li.other-links .dropmenu .dropmenu-nav li i {
     color: var(--main-color);
     margin-right: 10px;
@@ -361,7 +373,6 @@ li.other-links .dropmenu .dropmenu-nav li i {
     text-align: center;
     position: relative;
 }
-
 li.other-links .dropmenu .dropmenu-nav li a {
     text-decoration: none;
     color: var(--main-color);
@@ -427,12 +438,6 @@ li.other-links .dropmenu .dropmenu-nav li a {
     font-size: 38px;
     margin: 0 0;
     letter-spacing: -1.5px;
-}
-.landing .text h1 span {
-    background: linear-gradient(to left ,var(--main-color), rgb(28,130,150) );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 .landing .text p {
     font-size: 23px;
@@ -1725,7 +1730,7 @@ footer .content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
     gap: 40px;
-    padding: 50px 0;
+    padding: 60px 0;
 }
 footer .content .logo h2 {
     font-size: 40px;
