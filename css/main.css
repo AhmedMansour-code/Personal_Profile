@@ -1129,7 +1129,6 @@ li.other-links .dropmenu .dropmenu-nav li a {
     }
 }
 .how-it-work .container .content .section-image img {
-    width: 100%;
     max-width: 100%;
 }
 .how-it-work .container .content .box {
@@ -1165,14 +1164,17 @@ li.other-links .dropmenu .dropmenu-nav li a {
     width: 0;
     background-color: #ccc;
     opacity: 0.2;
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+    transform: translate(-50% , -50%);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
     -o-transition: var(--main-transition);
     transition: var(--main-transition);
 }
 .how-it-work .container .content .box .card:hover::before {
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -1195,7 +1197,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 .how-it-work .container .content .box .card .text p {
     margin: 10px 0 0;
-    color: #777;
+    color: var(--body-color);
     line-height: 1.5;
     font-size: 18px;
 }
@@ -1243,6 +1245,10 @@ li.other-links .dropmenu .dropmenu-nav li a {
     text-align: center;
     width: 75px;
     margin-bottom: 50px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 .latest-events .container .content .box .time > div:hover {
     border-color: var(--main-color);
@@ -1259,6 +1265,10 @@ li.other-links .dropmenu .dropmenu-nav li a {
 .latest-events .container .content .box .time > div span.unit {
     border-top: 1px solid #ccc;
     font-size: 14px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 .latest-events .container .content .box .time > div:hover span.unit {
     border-color: var(--main-color);
@@ -1271,7 +1281,6 @@ li.other-links .dropmenu .dropmenu-nav li a {
     color: var(--body-color);
     font-size: 18px;
     line-height: 2;
-    font-weight: 500;
 }
 .latest-events .container .subscribe {
     display: flex;
@@ -1284,7 +1293,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
     background-color: #eee;
     display: flex;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 @media (max-width: 767px) {
     .latest-events .container .subscribe form {
@@ -1293,17 +1302,24 @@ li.other-links .dropmenu .dropmenu-nav li a {
         padding: 20px;
     }
 }
-.latest-events .container form input[type="mail"] {
+.latest-events .container form input[type="email"] {
     padding: 20px;
     border-radius: 50px;
     border: none;
-    outline: none;
     flex-basis: 75%;
     max-width: 100%;
     caret-color: var(--main-color);
 }
-
-.latest-events .container form input[type="mail"]:focus::placeholder {
+.latest-events .container form input[type="email"]:focus {
+    outline: none;
+}
+.latest-events .container form input[type="email"]::placeholder {
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.latest-events .container form input[type="email"]:focus::placeholder {
     color: transparent;
 }
 .latest-events .container form input[type="submit"] {
@@ -1311,7 +1327,6 @@ li.other-links .dropmenu .dropmenu-nav li a {
     padding: 20px;
     border-radius: 50px;
     border: none;
-    outline: none;
     background-color: var(--main-color);
     color: #fff;
     font-weight: bold;
@@ -1351,13 +1366,15 @@ li.other-links .dropmenu .dropmenu-nav li a {
     height: 50%;
     width:0;
     background-color: #f5f5f5;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     transition: var(--main-transition);
 }
 .pricing .container .content .card::before {
     top: 0;
     left: 0;
 }
-
 .pricing .container .content .card::after {
     bottom: 0;
     right: 0;
@@ -1366,73 +1383,67 @@ li.other-links .dropmenu .dropmenu-nav li a {
 .pricing .container .content .card:hover::after {
     width: 100%;
 }
-.pricing .container .content .card.active {
-    transform: translateY(-20px);
-}
 .pricing .container .content .card div {
     position: relative;
     z-index: 2;
 }
 .pricing .container .content .card .header {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
 }
-.pricing .container .content .card .header.active::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -125px;
-    transform-origin: top left;
-    transform: rotate(90deg);
-    width: 145px;
-    border: 20px solid;
-    border-color: var(--main-color) transparent var(--main-color) var(--main-color);
+@media (min-width: 1200px) {
+    .pricing .container .content .card.active {
+        top: -20px;
+    }
 }
-.pricing .container .content .card .header.active::after {
+.pricing .container .content .card .header.active::before {
     content: "Most Popular";
     position: absolute;
-    top: 15px;
-    right: -68px;
-    transform-origin: left top;
-    transform: rotate(90deg);
+    top: 0px;
+    right: 25px;
+    writing-mode: vertical-lr;
+    padding: 10px 10px 0px;
+    width: 40px;
+    height: 120px;
+    background-color: var(--main-color);
     color: rgb(255, 255, 255);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
+    z-index: 1;
+}
+.pricing .container .content .card .header.active::after {
+    content: "";
+    position: absolute;
+    top: 115px;
+    right: 25px;
+    border: 20px solid var(--main-color);
+    border-bottom-color: transparent;
 }
 .pricing .container .content .card .header h3 {
-    margin-top: 15px;
+    margin: 10px 0 30px;
     font-size: 25px;
+    letter-spacing: -1px;
 }
 .pricing .container .content .card .header img {
     width: 80px;
 }
 .pricing .container .content .card .header h4 {
-    font-size: 55px;
-    margin: 40px 0;
+    font-size: 60px;
+    margin: 25px 0 5px;
     color: var(--main-color);
-    position: relative;
 }
-.pricing .container .content .card .header h4::before {
-    content: "Per Month";
-    position: absolute;
-    left: 50%;
-    bottom: -25px;
-    font-size: 15px;
-    color: #777;
-    font-weight: normal;
-    transform: translateX(-50%);
+.pricing .container .content .card .header span {
+    font-size: 16px;
+    color: var(--body-color);
 }
 .pricing .container .content .card ul li {
     padding: 20px;
     border-top: 1px solid #eee;
-    position: relative;
 }
 .pricing .container .content .card ul li:before {
     font-family: "Font Awesome 5 free";
     content: "\f00c";
     color: var(--main-color);
-    left: 0;
-    top: 0;
     margin-right: 10px;
     font-weight: bold;
 }
@@ -1449,6 +1460,9 @@ li.other-links .dropmenu .dropmenu-nav li a {
     font-weight: bold;
     cursor: pointer;
     background-color: #fff;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     transition: var(--main-transition);
 }
 .pricing .container .content .card .choose button:hover {
@@ -1464,6 +1478,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 .videos .container .content {
     display: flex;
+    border: 1px solid #e2e2e2;
 }
 @media (max-width: 991px) {
     .videos .container .content {
@@ -1471,8 +1486,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 }
 .videos .container .content .playlist {
-    flex-basis: 300px;
-    border: 1px solid #e2e2e2;
+    flex-basis: 300px;   
 }
 .videos .container .content .playlist .name {
     display: flex;
@@ -1484,13 +1498,25 @@ li.other-links .dropmenu .dropmenu-nav li a {
 .videos .container .content .playlist ul li {
     padding: 20px;
     border-top: 1px solid #e2e2e2;
+    cursor: pointer;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.videos .container .content .playlist ul li:hover {
+    background-color: #fafafa;
+}
+.videos .container .content .playlist ul li:hover a {
+    color: var(--main-color)
 }
 .videos .container .content .playlist ul li a {
     text-decoration: none;
     color: #000;
-}
-.videos .container .content .playlist ul li a:hover {
-    color: var(--main-color)
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 .videos .container .content .playlist ul li span {
     display: block;
@@ -1511,6 +1537,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
 .videos .container .content .screen .hosts {
     background-color: #fff;
     padding: 15px;
+    margin-top: 10px;
 }
 /* End Top Videos Section */
 /* =========================================================== */
@@ -1545,13 +1572,20 @@ li.other-links .dropmenu .dropmenu-nav li a {
     grid-template-columns: repeat(auto-fill , minmax(250px, 1fr));
     gap: 20px;
 }
-
 .stats .container .content .card {
     background-color: #fcfdfd;
     text-align: center;
     padding: 25px;
     position: relative;
+    opacity: 0.8;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 } 
+.stats .container .content .card:hover {
+    opacity: 1;
+}
 .stats .container .content .card::before,
 .stats .container .content .card::after {
     content: "";
@@ -1559,6 +1593,9 @@ li.other-links .dropmenu .dropmenu-nav li a {
     width: 2px;
     height: 0;
     background-color: var(--main-color);
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
     transition: 0.7s;
 }
 .stats .container .content .card::before {
@@ -1572,16 +1609,6 @@ left: 0;
 .stats .container .content .card:hover::before,
 .stats .container .content .card:hover::after {
     height: 100%;
-}
-.stats .container .content .card i,
-.stats .container .content .card h3,
-.stats .container .content .card p {
-    opacity: 0.8;
-}
-.stats .container .content .card:hover i,
-.stats .container .content .card:hover h3,
-.stats .container .content .card:hover p {
-    opacity: 1;
 }
 .stats .container .content .card i {
     font-size: 35px;
@@ -1619,6 +1646,15 @@ left: 0;
     justify-content: center;
     align-items: center;
     position: relative;
+    animation: change-background 10s linear infinite;
+}
+@keyframes change-background {
+    0% , 100% {
+        background-image: url("../images/discount-background1.jpg");
+    }
+    50% {
+        background-image: url("../images/discount-background2.jpg")
+    }
 }
 .discount .ads::before {
     content: "";
@@ -1635,18 +1671,18 @@ left: 0;
     color: #fff;
     position: relative;
 }
-.discount .ads .text h2 {
+.discount h2 {
     font-size: 40px;
-    letter-spacing: -2;
+    letter-spacing: -2px;
 }
 .discount .ads .text p {
     max-width: 500px;
     font-size: 18px;
     line-height: 1.5;
-    font-weight: 500;
 }
 .discount .ads .text img {
     width: 300px;
+    max-width: 100%;
 }
 .discount .request {
     display: flex;
@@ -1656,18 +1692,15 @@ left: 0;
 .discount .request .req-dis {
     text-align: center;
 }
-.discount .request .req-dis h2 {
-    font-size: 40px;
-    letter-spacing: -2;
-}
 .discount .request .req-dis form input {
     display: block;
     width: 100%;
     border: none;
     border-bottom: 1px solid #ccc;
     margin-bottom: 25px;
-    padding: 10px;
+    padding: 15px;
     caret-color: var(--main-color);
+    background-color: #f9f9f9;
 }
 .discount .request .req-dis form input:focus,
 .discount .request .req-dis form textarea {
@@ -1678,9 +1711,10 @@ left: 0;
     height: 150px;
     border: none;
     border-bottom: 1px solid #ccc;
-    padding: 10px;
+    padding: 15px;
     resize: none;
     caret-color: var(--main-color);
+    background-color: #f9f9f9;
 }
 .discount .request .req-dis form input[type=submit] {
     padding: 15px;
@@ -1691,9 +1725,13 @@ left: 0;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 }
 .discount .request .req-dis form input[type=submit]:hover {
-    background-color: #1C85DB
+    background-color: #1787e0
 }
 /* End Discount Section */
 /* =========================================================== */
@@ -1719,6 +1757,11 @@ footer .content .logo img {
     display: block;
     margin-bottom: 20px;
 }
+@media (max-width: 767px) {
+    footer .content .logo img {
+        margin: 0 auto 20px;
+    }
+}
 /* footer .content .logo h2 {
     font-size: 40px;
     color: #fff;
@@ -1728,6 +1771,9 @@ footer .content .logo .icons i {
     font-size: 40px;
     color: #b9b9b9;
     margin-right: 15px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     transition: var(--main-transition);
 }
 footer .content .logo .icons i.facebook:hover {
@@ -1746,6 +1792,9 @@ footer .content .links ul li {
     padding: 15px;
     padding-left: 0;
     border-bottom: 1px solid #444;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     transition: var(--main-transition);
 }
 footer .content .links ul li:last-child {
@@ -1757,19 +1806,13 @@ footer .content .links ul li:hover {
 footer .content .links ul li a {
     color: #b9b9b9;
     text-decoration: none;
-    position: relative;
-    padding-left: 20px;
 }
 footer .content .links ul li a::before {
     font-family: "Font Awesome 5 Free";
     content:"\f101";
     font-weight: bold;
     color: var(--main-color);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: var(--main-transition);
+    margin-right: 10px;
 }
 footer .content .links ul li a:hover {
     color: #fff;
