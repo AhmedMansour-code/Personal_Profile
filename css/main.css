@@ -9,17 +9,14 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'Cairo', sans-serif;
 }
-
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -27,7 +24,7 @@ ul {
     margin-right: auto;
 }
 /* End Globale Rules */
-
+/* ============================================================ */
 /* Start Media Query Responsive Design */
 /* Small Screens */
 @media (min-width: 768px) {
@@ -48,9 +45,9 @@ ul {
     }
 }
 /* End Media Query Responsive Design */
-
+/* ============================================================ */
 /* Start Components */
-
+/* =================*/
 /* 1st Component [ SECTION HEADING ]*/
 .heading {
     display: flex;
@@ -143,20 +140,16 @@ ul {
 /* 2nd component [SPIKES SPEARETOR]  */
 .spikes {
     position: relative;
-    background: var(--main-bg-color);
 }
 .spikes::after {
-    content: '';
+    content: "";
     position: absolute;
-    right: 0;
-    left: -0%;
     top: 0;
-    z-index: 1;
-    display: block;
+    z-index: 2;
     height: 35px;
-    background-size: 25px 100%;
+    width: 100%;
+    background-size: 30px 100%;
     background-image: linear-gradient(135deg, #fff 25%, transparent 25%), linear-gradient(225deg, #fff 25%, transparent 25%);
-    background-position: 0 0;
 }
 /* ----------------------------------------------- */
 /* 3rd Component [ DOTTED BACKGROUND ] */
@@ -172,12 +165,41 @@ img.dots-bottom-left {
     left: 0;
     opacity: 0.3;
 }
+/* ------------------------------------------------- */
+/* 4th component [SCROLL UP BUTTON ] */
+a.scroll-up {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+    background-image: linear-gradient(to right, var(--alt-color) 50%, var(--main-color) 50%);
+    background-size: 200% 100%;
+    background-position: top right;
+}
+a.scroll-up:hover {
+    background-position: top left;
+}
 /* End Compounents */
-
+/* ============================================================ */
 /* Start Variables */
 /* Do not Forget to Add the Fullback Value */
 :root {
     --main-color: #2196f3;
+    --alt-color: #1787e0;
     --body-color: #777;
     --main-bg-color: #ececec;
     --main-transition: 0.3s;
@@ -187,26 +209,9 @@ img.dots-bottom-left {
 /* End Variables */
 
 /* =========================================================== */
-/* A button to go to the top of the page */
-a.scroll-up {
-    position: fixed;
-    bottom: 15px;
-    right: 20px;
-    background-color: #ddd;
-    padding: 5px 10px;
-    border-radius: 7px;
-    color: var(--main-color);
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 100;
-    animation: scroll-up 0.5s infinite;
-}
-@keyframes scroll-up {
-    to {
-        bottom: 25px;
-    }
-}
+/* ===========START STYLING OF THE TEMPLATE SECTIONS========== */
 /* =========================================================== */
+
 /* Start Header */
 header {
     background-color: #fff;
@@ -233,12 +238,20 @@ header .container {
 header .container .logo h1 {
     font-size: 28px;
     color: var(--main-color);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+    cursor: pointer;
 }
 @media (max-width: 767px) {
     header .container .logo h1 {
         margin: 10px 0;
     }
 } 
+header .container .logo h1:hover {
+    color: var(--alt-color);
+}
 header .container .nav ul {
     display: flex;
 }
@@ -271,12 +284,12 @@ header .container .nav ul li a.main-link::before {
     top: 0;
     left: 0;
     height: 4px;
+    width: 0;
     background-color: var(--main-color);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
     -o-transition: var(--main-transition);
     transition: var(--main-transition);
-    width: 0;
 } 
 header .container .nav ul li a.main-link:hover::before {
     width: 100%;
@@ -485,6 +498,10 @@ li.other-links .dropmenu .dropmenu-nav li a {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
     -webkit-animation: jump 1.5s linear infinite;
     -moz-animation: jump 1.5s linear infinite;
     -o-animation: jump 1.5s linear infinite;
@@ -500,6 +517,9 @@ li.other-links .dropmenu .dropmenu-nav li a {
     40% , 100% {
         bottom: 30px;
     }
+}
+.landing .scroll-down:hover {
+    color: var(--alt-color);
 }
 .landing .scroll-down i {
     font-weight: bolder;
@@ -520,6 +540,8 @@ li.other-links .dropmenu .dropmenu-nav li a {
 .articale .container .content .card {
     border-radius: 7px;
     overflow: hidden;
+    -webkit-box-shadow: var(--main-shadow);
+    -moz-box-shadow: var(--main-shadow);
     box-shadow: var(--main-shadow);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
@@ -554,7 +576,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 .articale .container .content .card .text {
     padding: 25px 20px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e6e6e7;
 
 }
 .articale .container .content .card .text h4 {
@@ -596,6 +618,8 @@ li.other-links .dropmenu .dropmenu-nav li a {
     flex-basis: calc((100% - 80px)/3);
     border:15px solid #fff;
     background-color: #fff;
+    -webkit-box-shadow: var(--main-shadow);
+    -moz-box-shadow: var(--main-shadow);
     box-shadow: var(--main-shadow);
     overflow: hidden;
     position: relative
@@ -616,6 +640,10 @@ li.other-links .dropmenu .dropmenu-nav li a {
     background-color: rgb(255 255 255 / 20%);
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
@@ -826,6 +854,8 @@ li.other-links .dropmenu .dropmenu-nav li a {
     padding: 20px;
     border-radius: 7px;
     position: relative;
+    -webkit-box-shadow: var(--main-shadow);
+    -moz-box-shadow: var(--main-shadow);
     box-shadow: var(--main-shadow);
 }
 .testimonials .container .content .card img {
@@ -967,6 +997,8 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 .services .container .content > div {
     flex-basis: calc((100% - 80px)/3);
+    -webkit-box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    -moz-box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
     counter-increment: count-cards;
     position: relative;
@@ -1331,6 +1363,13 @@ li.other-links .dropmenu .dropmenu-nav li a {
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.latest-events .container form input[type="submit"]:hover {
+    background-color: var(--alt-color);
 }
 @media (max-width: 767px) {
     .latest-events .container .subscribe form input {
@@ -1356,7 +1395,9 @@ li.other-links .dropmenu .dropmenu-nav li a {
 }
 .pricing .container .content .card {
     background-color: #fff;
-    position: relative;
+    position: relative;   
+    -webkit-box-shadow: var(--main-shadow);
+    -moz-box-shadow: var(--main-shadow);
     box-shadow: var(--main-shadow);
 }
 .pricing .container .content .card::before ,
@@ -1466,7 +1507,8 @@ li.other-links .dropmenu .dropmenu-nav li a {
     transition: var(--main-transition);
 }
 .pricing .container .content .card .choose button:hover {
-    background-color: var(--main-color);
+    background-color: var(--alt-color);
+    border-color: var(--alt-color);
     color: #fff;
 }
 /* End Pricing Plan Section */
@@ -1532,7 +1574,7 @@ li.other-links .dropmenu .dropmenu-nav li a {
     justify-content: space-between;
 }
 .videos .container .content .screen .image img {
-    max-width: 100%
+    max-width: 100%;
 }
 .videos .container .content .screen .hosts {
     background-color: #fff;
@@ -1646,6 +1688,9 @@ left: 0;
     justify-content: center;
     align-items: center;
     position: relative;
+    -webkit-animation: change-background 10s linear infinite;
+    -moz-animation: change-background 10s linear infinite;
+    -o-animation: change-background 10s linear infinite;
     animation: change-background 10s linear infinite;
 }
 @keyframes change-background {
@@ -1731,14 +1776,13 @@ left: 0;
     transition: var(--main-transition);
 }
 .discount .request .req-dis form input[type=submit]:hover {
-    background-color: #1787e0
+    background-color: var(--alt-color);
 }
 /* End Discount Section */
 /* =========================================================== */
 /* Start The footer */
 footer {
-    /* background-color: #191919; */
-    background-color: #222222;
+    background-color: #191919;
     color: #b9b9b9;
 }
 @media (max-width: 767px) {
@@ -1752,21 +1796,11 @@ footer .content {
     gap: 40px;
     padding: 60px 0;
 }
-footer .content .logo img {
-    height: 65px;
-    display: block;
-    margin-bottom: 20px;
-}
-@media (max-width: 767px) {
-    footer .content .logo img {
-        margin: 0 auto 20px;
-    }
-}
-/* footer .content .logo h2 {
+footer .content .logo h2 {
     font-size: 40px;
     color: #fff;
     margin: 0 0 20px;
-} */
+}
 footer .content .logo .icons i {
     font-size: 40px;
     color: #b9b9b9;
@@ -1853,9 +1887,9 @@ footer .copy-rights {
     font-weight: bold;
 }
 footer .copy-rights i {
-    color: red;
+    color: #ff3333;
 }
 /* End The footer */
-/* ---------------------------------------------------- */
+/* ==================================================== */
 
 
