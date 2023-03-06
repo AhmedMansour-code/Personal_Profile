@@ -1,6 +1,6 @@
 # Website_Template_3
 HTML &amp; CSS Website Template 3
-,,,
+
 
 ## Table of contents
 * [Important Files](important-files)
