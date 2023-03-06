@@ -10,14 +10,13 @@ HTML &amp; CSS Website Template 3
 * [Credit](credit)
 
 ## Important Files
-* HTML Files
-* Main CSS File
-* FrameWork-File.css [Using customized classes to creat a personal franwork]
+* HTML Files {HTML5}
+* Main CSS File {CSS3}
 
 ## General info
-This is a responsive dashboard Template using HTML & CCS3 and creating my own framework to use.
-Template Design by Osama Elzero , coding from scratch by myself.
-	
+This is a sample of responsive boxed webiste template looks like a personal profile.
+With Time this Template will be upgraded Using JavaScript.
+
 ## Technologies
 Project is created with:
 * Visual Studio Code
