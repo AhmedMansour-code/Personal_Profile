@@ -22,7 +22,7 @@ Project is created with:
 * Visual Studio Code
 	
 
-## Link To view The DashBoard
+## Link To view The Website
 	
 https://ahmedmansour-code.github.io/Personal_Profile/
 
